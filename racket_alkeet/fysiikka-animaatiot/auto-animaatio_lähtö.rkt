@@ -4,6 +4,7 @@
 (require 2htdp/image)
 (require 2htdp/universe)
 (require teachpacks/display-read)
+(require teachpacks/plot2D)
 (define KORKEUS 300)
 (define LEVEYS 1000)
 (define AUTO-Y 200)
@@ -38,5 +39,7 @@
           (to-draw päivitä-animaatio)
           (on-tick add1))
 
-; (require plot)
-; (plot (list (axes)(function s1 0 100)(function s2 0 100))))
+(plot2D (list (func s1 0 100 (string-append (number->string v1)"m/s"))
+              (func s2 0 100 (string-append (number->string v2)"m/s")))
+        "aika (s)"
+        "matka (m)")

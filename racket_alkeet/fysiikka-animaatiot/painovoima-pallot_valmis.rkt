@@ -3,6 +3,7 @@
 #reader(lib "htdp-advanced-reader.ss" "lang")((modname painovoima-pallot_valmis) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
 (require 2htdp/universe)
 (require 2htdp/image)
+(require teachpacks/plot2D)
 (define KORKEUS 500)
 (define LEVEYS 300)
 (define 1M 10)    ; mittakaava 10px = 1m  
@@ -43,5 +44,4 @@
           (to-draw päivitä-kuva)
           (on-tick päivitä-aika))
 
-; (require plot)
-; (plot (list (axis) (function matka-maassa 0 100)(function matka-kuussa 0 100)))
+(plot2D (list (func matka-maassa 0 100 "maassa")(func matka-kuussa 0 100 "kuussa")) "aika (s)" "matka (m)")

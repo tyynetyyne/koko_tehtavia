@@ -3,6 +3,7 @@
 #reader(lib "htdp-advanced-reader.ss" "lang")((modname heiluri-animaatio_lähtö) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
 (require 2htdp/image)
 (require 2htdp/universe)
+(require teachpacks/plot2D)
 (require teachpacks/display-read)
 (define KORKEUS 300)
 (define LEVEYS 500)
@@ -33,5 +34,4 @@
           (to-draw päivitä-animaatio)
           (on-tick add1))
 
-; (require plot)
-; (plot (function theta 0 100))
+(plot2D (func theta 0 100))
